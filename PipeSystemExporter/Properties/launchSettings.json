@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "PipeSystemExporter": {
+      "commandName": "Executable",
+      "executablePath": "C:\\Program Files\\Autodesk\\Revit 2025\\Revit.exe",
+      "commandLineArgs": "Y:\\a\\rvt\\plumbing_single_room_2025.rvt"
+    }
+  }
+}

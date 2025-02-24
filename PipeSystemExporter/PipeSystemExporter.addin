@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Text>PipeSystem Exporter</Text>
+    <Description>Export pipe system element data</Description>
+    <Assembly>PipeSystemExporter.dll</Assembly>
+    <FullClassName>PipeSystemExporter.Command</FullClassName>
+    <ClientId>5e2133b8-bc35-4804-9092-4c2330d66d7e</ClientId>
+    <VendorId>com.typepad.thebuildingcoder</VendorId>
+    <VendorDescription>The Building Coder, http://thebuildingcoder.typepad.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>
