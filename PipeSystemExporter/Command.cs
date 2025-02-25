@@ -14,7 +14,7 @@ using System.Net;
 
 namespace PipeSystemExporter
 {
-  [Transaction(TransactionMode.Manual)]
+  [Transaction(TransactionMode.ReadOnly)]
   public class Command : IExternalCommand
   {
     public Result Execute(
@@ -63,31 +63,6 @@ namespace PipeSystemExporter
         string t = string.Join(" ", pts.Select( p => Util.PointString(p)));
         Debug.Print($"  {s} '{fitting.Symbol.FamilyName}' '{fitting.Name}' {t}");
       }
-
-      double xoffset = 20; // duplicate system feet towards positive X
-
-      ElementId systemTypeId
-        = new FilteredElementCollector(doc)
-          .OfClass(typeof(PipingSystemType))
-          .Cast<PipingSystemType>()
-          .Where<PipingSystemType>(x => MEPSystemClassification.Sanitary == x.SystemClassification)
-          .FirstOrDefault<PipingSystemType>()
-          .Id;
-
-      ElementId pipeTypeId
-        = new FilteredElementCollector(doc)
-          .OfClass(typeof(PipeType))
-          .FirstElementId();
-
-      ElementId levelId
-        = new FilteredElementCollector(doc)
-          .OfClass(typeof(Level))
-          .FirstElementId();
-
-/*
-      Pipe.Create(doc, systemTypeId, pipeTypeId, levelId, startPoint, endPoint);
-
-      */
 
       return Result.Succeeded;
     }
